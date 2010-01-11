@@ -53,7 +53,7 @@ namespace SQLGen.TSQL
 
         public string FreeText(string searchterm, params string[] columnlist)
         {
-            throw new NotImplementedException();
+            return string.Format(" FREETEXT({0},'{1}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchterm.Trim('\''));
         }
 
         public string FreeText(string searchterm, string language, params string[] columnlist)
