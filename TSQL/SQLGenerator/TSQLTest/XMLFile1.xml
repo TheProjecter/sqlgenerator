@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<statements>
+  <header>
+    
+  </header>
+  <footer>
+    
+  </footer>
+  <statement name="createtable">
+    CREATE TABLE #Eids(Eid varchar(50),Ref nvarchar(max),Terms nvarchar(300),[Level] int);
+  </statement>
+  <statement name="selecteidandref_first">
+    SELECT Eid,Reference,'--',0 FROM Eid_Ref WHERE CONTAINS(Reference,'{0}');
+    IF @@ROWCOUNT > 0 GOTO GetData;
+  </statement>
+  <statement name="selecteidandref_second">
+    SELECT Eid,Reference,'{0}',{1} FROM Eid_Ref WHERE Eid NOT IN (SELECT Eid FROM #Eids) AND CONTAINS(Reference,'{2}');
+    IF @@ROWCOUNT > 0 GOTO GetData;
+  </statement>
+  <statement name="getdata">
+    GetData:
+    DECLARE @lvl INT
+    SET @lvl = (SELECT MIN([Level]) FROM #Eids);
+    IF @lvl &lt; 2
+      SELECT * FROM #Eids WHERE [Level] = @lvl 
+    ELSE 
+      SELECT TOP 1 * FROM #Eids WHERE [Level] = @lvl;
+  </statement>
+</statements>
