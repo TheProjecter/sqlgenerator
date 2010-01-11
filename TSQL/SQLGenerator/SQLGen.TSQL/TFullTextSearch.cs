@@ -58,17 +58,17 @@ namespace SQLGen.TSQL
 
         public string FreeText(string searchterm, string language, params string[] columnlist)
         {
-            throw new NotImplementedException();
+            return string.Format(" FREETEXT({0},{1},LANGUAGE N'{2}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchterm.ToString(), language);
         }
 
         public string FreeTextTable(string tableName, string searchterm, params string[] columnlist)
         {
-            throw new NotImplementedException();
+            return string.Format(" FREETEXTTABLE({0},{1},'{2}')", tableName, Utility.GetListAsString<string>(columnlist.ToList(), ","), searchterm.Trim('\''));
         }
 
         public string FreeTextTable(string tableName, string searchterm, string language, int top_n_by_rank, params string[] columnlist)
         {
-            throw new NotImplementedException();
+            return string.Format(" FREETEXTTABLE({0},{1},'{2}', LANGUAGE N'{3}',{4})", tableName, Utility.GetListAsString<string>(columnlist.ToList(), ","), searchterm.Trim('\''), language, top_n_by_rank);
         }
 
         #endregion
