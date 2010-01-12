@@ -35,6 +35,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -45,9 +46,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Db.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLDB\Alphabetical_list_of_products.cs" />
+    <Compile Include="SQLDB\Categories.cs" />
+    <Compile Include="SQLDB\Category_Sales_for_1997.cs" />
+    <Compile Include="SQLDB\Current_Product_List.cs" />
+    <Compile Include="SQLDB\CustomerCustomerDemo.cs" />
+    <Compile Include="SQLDB\CustomerDemographics.cs" />
+    <Compile Include="SQLDB\Customers.cs" />
+    <Compile Include="SQLDB\Customer_and_Suppliers_by_City.cs" />
+    <Compile Include="SQLDB\DBProcs.cs" />
+    <Compile Include="SQLDB\DBTables.cs" />
+    <Compile Include="SQLDB\DBViews.cs" />
+    <Compile Include="SQLDB\Employees.cs" />
+    <Compile Include="SQLDB\EmployeeTerritories.cs" />
+    <Compile Include="SQLDB\Invoices.cs" />
+    <Compile Include="SQLDB\Orders.cs" />
+    <Compile Include="SQLDB\Orders_Qry.cs" />
+    <Compile Include="SQLDB\Order_Details.cs" />
+    <Compile Include="SQLDB\Order_Details_Extended.cs" />
+    <Compile Include="SQLDB\Order_Subtotals.cs" />
+    <Compile Include="SQLDB\Products.cs" />
+    <Compile Include="SQLDB\Products_Above_Average_Price.cs" />
+    <Compile Include="SQLDB\Products_by_Category.cs" />
+    <Compile Include="SQLDB\Product_Sales_for_1997.cs" />
+    <Compile Include="SQLDB\Quarterly_Orders.cs" />
+    <Compile Include="SQLDB\Region.cs" />
+    <Compile Include="SQLDB\Sales_by_Category.cs" />
+    <Compile Include="SQLDB\Sales_Totals_by_Amount.cs" />
+    <Compile Include="SQLDB\Shippers.cs" />
+    <Compile Include="SQLDB\Summary_of_Sales_by_Quarter.cs" />
+    <Compile Include="SQLDB\Summary_of_Sales_by_Year.cs" />
+    <Compile Include="SQLDB\Suppliers.cs" />
+    <Compile Include="SQLDB\Territories.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="XMLFile1.xml" />
