@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLGen.Core", "SQLGen.Core\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLGen.TSQL", "SQLGen.TSQL\SQLGen.TSQL.csproj", "{1A015D0D-C05A-4FD1-8EEC-D0212A74048F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSQLTest", "TSQLTest\TSQLTest.csproj", "{80287454-6F64-4602-98DB-456D94B4ECBB}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -23,6 +25,10 @@ Global
 		{1A015D0D-C05A-4FD1-8EEC-D0212A74048F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A015D0D-C05A-4FD1-8EEC-D0212A74048F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A015D0D-C05A-4FD1-8EEC-D0212A74048F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80287454-6F64-4602-98DB-456D94B4ECBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80287454-6F64-4602-98DB-456D94B4ECBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80287454-6F64-4602-98DB-456D94B4ECBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80287454-6F64-4602-98DB-456D94B4ECBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

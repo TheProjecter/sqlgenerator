@@ -20,14 +20,14 @@ namespace SQLGen.TSQL
 
         public override string ToString()
         {
-            return this.condition.ToString();
+            return string.Format("'{0}'",this.condition.ToString());
         }
 
         #region IFullTextSearchCondition Members
 
         public IFullTextSearchCondition SimpleTerm(string term)
         {
-            this.condition.AppendFormat(" {0}",term);
+            this.condition.AppendFormat("{0}",term);
             return this;
         }
 

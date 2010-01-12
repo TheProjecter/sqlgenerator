@@ -12,7 +12,19 @@ namespace TSQLTest
     {
         static void Main(string[] args)
         {
-            
+            SQL s = new SQL();
+            s.Use("MyDB");
+            s.SelectStatement.Select("*").From("MyTable").As("mt").InnerJoin("OtherTable").As("ot").On("ot.PK").Equal("mt.FK");
+            s.Close();
+            s.Close("GO");
+            s.AppendIf("@c").Equal("3");
+            s.Begin();
+            TFullTextSearch search = new TFullTextSearch();
+            TFullTextSearchCondition cond = new TFullTextSearchCondition();
+            cond.SimpleTerm("\"sometext\"").AndNot("\"thatword\"");
+            s.InsertStatement.InsertInto("Customers").SubQuery.Select("*").From().ContainsTable("Suppliers",cond,"Description").Where().Contains(new TFullTextSearchCondition().SimpleTerm("\"bad*\""),null,"Description");
+            s.End();
+            Console.WriteLine(s.ToString());
         }   
     }
 

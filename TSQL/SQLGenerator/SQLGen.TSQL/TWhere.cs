@@ -262,31 +262,7 @@ namespace SQLGen.TSQL
                 throw new Exception(string.Format("subquery cannot be null or empty \r\n'{0}'", this.sql.ToString()));
             }
             return this;
-        }
-
-        public IWhere Contains(IFullTextSearch ftsearch)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IWhere Contains(string ftsearch)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IWhere FreeText(IFullTextSearch ftsearch)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IWhere FreeText(string ftsearch)
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
-
-        #region ICondition Members
+        }        
 
         public ICondition Expression(string expression)
         {
@@ -298,6 +274,49 @@ namespace SQLGen.TSQL
             {
                 throw new Exception(string.Format("Expression cannot be null or empty \r\n'{0}'", this.sql.ToString()));
             }
+            return this;
+        }
+
+        #endregion
+
+        #region IWhere Members
+
+        public IWhere Contians(string searchcondition, params string[] columnlist)
+        {
+            this.sql.AppendFormat(" CONTAINS({0},'{1}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchcondition.Trim('\''));
+            return this;
+        }
+
+        public IWhere Contians(string searchcondition, string language, params string[] columnlist)
+        {
+            this.sql.AppendFormat(" CONTAINS({0},'{1}',LANGUAGE N'{2}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchcondition.Trim('\''), language);
+            return this;
+        }
+
+        public IWhere Contains(IFullTextSearchCondition searchcondition, params string[] columnlist)
+        {
+            this.sql.AppendFormat(" CONTAINS({0},{1})", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchcondition.ToString());
+            return this;
+        }
+
+        public IWhere Contains(IFullTextSearchCondition searchcondition, string language, params string[] columnlist)
+        {
+            this.sql.AppendFormat(" CONTAINS({0},{1},LANGUAGE N'{2}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchcondition.ToString(), language);
+            return this;
+        }
+
+        public IWhere FreeText(IFullTextSearchCondition searchterm, params string[] columnlist)
+        {
+            this.sql.AppendFormat(" FREETEXT({0},'{1}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchterm.ToString());
+            return this;
+        }
+
+        public IWhere FreeText(string searchterm, string language, params string[] columnlist)
+        {
+            if(!string.IsNullOrEmpty(language))
+                this.sql.AppendFormat(" FREETEXT({0},{1},LANGUAGE N'{2}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchterm, language);
+            else
+                this.sql.AppendFormat(" FREETEXT({0},'{1}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchterm);
             return this;
         }
 

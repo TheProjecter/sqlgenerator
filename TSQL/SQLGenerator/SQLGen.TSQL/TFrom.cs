@@ -281,31 +281,49 @@ namespace SQLGen.TSQL
             this.sql.Append(" \r\nFROM");
             return this;
         }
-
-        public IFrom ContainsTable(IFullTextSearch ftsearch)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IFrom ContainsTable(string ftsearch)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IFrom FreeTextTable(IFullTextSearch ftsearch)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IFrom FreeTextTable(string ftsearch)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public IWhere Where()
         {
             this.sql.Append(" WHERE");
             return this.twhere;
+        }
+
+
+        public IFrom ContainsTable(string tableName, string searchcondition, params string[] columnList)
+        {
+            this.sql.AppendFormat(" CONTAINSTABLE({0},{1},'{2}')", tableName, Utility.GetListAsString<string>(columnList.ToList(), ","), searchcondition.Trim('\''));
+            return this;
+        }
+
+        public IFrom ContainsTable(string tableName, string searchcondition, string language, int top_n_byrank, params string[] columnList)
+        {
+            this.sql.AppendFormat(" CONTAINSTABLE({0},{1},'{2}', LANGUAGE N'{3}',{4})", tableName, Utility.GetListAsString<string>(columnList.ToList(), ","), searchcondition.Trim('\''), language, top_n_byrank);
+            return this;
+        }
+
+        public IFrom ContainsTable(string tableName, IFullTextSearchCondition searchcondition, params string[] columnList)
+        {
+            this.sql.AppendFormat(" CONTAINSTABLE({0},{1},{2})", tableName, Utility.GetListAsString<string>(columnList.ToList(), ","), searchcondition.ToString());
+            return this;
+        }
+
+        public IFrom ContainsTable(string tableName, IFullTextSearchCondition searchcondition, string language, int top_n_byrank, params string[] columnList)
+        {
+            this.sql.AppendFormat(" CONTAINSTABLE({0},{1},'{2}', LANGUAGE N'{3}',{4})", tableName, Utility.GetListAsString<string>(columnList.ToList(), ","), searchcondition.ToString(), language, top_n_byrank);
+            return this;
+        }
+
+        public IFrom FreeTextTable(string tableName, string searchterm, params string[] columnlist)
+        {
+            this.sql.AppendFormat(" FREETEXTTABLE({0},{1},'{2}')", tableName, Utility.GetListAsString<string>(columnlist.ToList(), ","), searchterm.Trim('\''));
+            return this;
+        }
+
+        public IFrom FreeTextTable(string tableName, string searchterm, string language, int top_n_by_rank, params string[] columnlist)
+        {
+            this.sql.AppendFormat(" FREETEXTTABLE({0},{1},'{2}', LANGUAGE N'{3}',{4})", tableName, Utility.GetListAsString<string>(columnlist.ToList(), ","), searchterm.Trim('\''), language, top_n_by_rank);
+            return this;
         }
 
         #endregion
