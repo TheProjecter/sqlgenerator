@@ -233,21 +233,7 @@ namespace SQLGen.TSQL
             }
             return this.twhere;
         }
-
-        public IWhere WhereContains(string columnName, string value)
-        {
-            if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(value))
-            {
-                this.sql.AppendFormat(" \r\nWHERE CONTAINS(");
-                throw new Exception(string.Format("CONTAINS column name or value cannot be null or empty \r\n'{0}'", this.sql.ToString()));
-            }
-            else
-            {
-                this.sql.AppendFormat(" \r\nWHERE CONTAINS({0},'{1}')", columnName, value);
-            }
-            return this.twhere;
-        }        
-
+        
 
         public void Close()
         {
@@ -285,7 +271,7 @@ namespace SQLGen.TSQL
 
         public IWhere Where()
         {
-            this.sql.Append(" WHERE");
+            this.sql.Append(" \r\nWHERE");
             return this.twhere;
         }
 

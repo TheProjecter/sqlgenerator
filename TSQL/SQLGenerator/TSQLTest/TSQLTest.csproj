@@ -49,6 +49,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="XMLFile1.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\SQLGen.Core\SQLGen.Core.csproj">
       <Project>{63FCDD9C-232D-4754-AB53-B88592CC62DE}</Project>
       <Name>SQLGen.Core</Name>
@@ -57,9 +60,6 @@
       <Project>{1A015D0D-C05A-4FD1-8EEC-D0212A74048F}</Project>
       <Name>SQLGen.TSQL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

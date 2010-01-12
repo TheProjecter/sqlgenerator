@@ -22,7 +22,7 @@ namespace TSQLTest
             TFullTextSearch search = new TFullTextSearch();
             TFullTextSearchCondition cond = new TFullTextSearchCondition();
             cond.SimpleTerm("\"sometext\"").AndNot("\"thatword\"");
-            s.InsertStatement.InsertInto("Customers").SubQuery.Select("*").From().ContainsTable("Suppliers",cond,"Description").Where().Contains(new TFullTextSearchCondition().SimpleTerm("\"bad*\""),null,"Description");
+            s.InsertStatement.InsertInto("Customers").SubQuery.Select("*").From().ContainsTable("Suppliers", cond, "Description").Where().Contians("con",null,"Desc");
             s.End();
             Console.WriteLine(s.ToString());
         }   

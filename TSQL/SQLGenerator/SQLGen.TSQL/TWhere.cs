@@ -279,29 +279,32 @@ namespace SQLGen.TSQL
 
         #endregion
 
-        #region IWhere Members
-
-        public IWhere Contians(string searchcondition, params string[] columnlist)
-        {
-            this.sql.AppendFormat(" CONTAINS({0},'{1}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchcondition.Trim('\''));
-            return this;
-        }
+        #region IWhere Members       
 
         public IWhere Contians(string searchcondition, string language, params string[] columnlist)
         {
-            this.sql.AppendFormat(" CONTAINS({0},'{1}',LANGUAGE N'{2}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchcondition.Trim('\''), language);
+            if (!string.IsNullOrEmpty(language))
+            {
+                this.sql.AppendFormat(" CONTAINS({0},'{1}',LANGUAGE N'{2}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchcondition.Trim('\''), language);
+            }
+            else
+            {
+                this.sql.AppendFormat(" CONTAINS({0},'{1}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchcondition.Trim('\''));
+            }
             return this;
         }
 
-        public IWhere Contains(IFullTextSearchCondition searchcondition, params string[] columnlist)
-        {
-            this.sql.AppendFormat(" CONTAINS({0},{1})", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchcondition.ToString());
-            return this;
-        }
 
         public IWhere Contains(IFullTextSearchCondition searchcondition, string language, params string[] columnlist)
         {
-            this.sql.AppendFormat(" CONTAINS({0},{1},LANGUAGE N'{2}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchcondition.ToString(), language);
+            if (!string.IsNullOrEmpty(language))
+            {
+                this.sql.AppendFormat(" CONTAINS({0},{1},LANGUAGE N'{2}')", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchcondition.ToString(), language);
+            }
+            else
+            {
+                this.sql.AppendFormat(" CONTAINS({0},{1})", Utility.GetListAsString<string>(columnlist.ToList(), ","), searchcondition.ToString());
+            }
             return this;
         }
 
