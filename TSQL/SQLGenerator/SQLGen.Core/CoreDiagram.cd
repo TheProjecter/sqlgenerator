@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="SQLGen.Core.IAggregate" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAEAAAAAQAAAAAQAAAAAAAIAAAAAQ=</HashCode>
+      <FileName>IAggregate.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SQLGen.Core.ICommon" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAgAAEAAAAAAAAAAEAAAQBAAAgAAACAAAA=</HashCode>
+      <FileName>ICommon.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SQLGen.Core.ICondition" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAAAAAAAAAAAAgIAAAAAAAAAAAAAwAAAACQVBgCA=</HashCode>
+      <FileName>ICondition.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SQLGen.Core.IDelete" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IDelete.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SQLGen.Core.IFrom" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAABCAAAAAAAAAgAAQAAAAAAAFAQAAAAAEAAEAAAII=</HashCode>
+      <FileName>IFrom.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SQLGen.Core.IFullTextSearch" Collapsed="true">
+    <Position X="5.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAgAAAAAAAAAABAgAAAAAAAAAAQAAA=</HashCode>
+      <FileName>IFullTextSearch.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SQLGen.Core.IFullTextSearchCondition" Collapsed="true">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>pAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAjAAAAAAAAgAA=</HashCode>
+      <FileName>IFullTextSearchCondition.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SQLGen.Core.IInsert" Collapsed="true">
+    <Position X="8.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgQAAAAAA=</HashCode>
+      <FileName>IInsert.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SQLGen.Core.ISelect" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAEAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>ISelect.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SQLGen.Core.ISQL" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAgABAKAACRACCAEUgAAAAAAgggAAKE=</HashCode>
+      <FileName>ISQL.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SQLGen.Core.IUpdate" Collapsed="true">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAAAAAAABAAAAAAAAAAAAAEAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>IUpdate.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SQLGen.Core.IWhere" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAQAAA=</HashCode>
+      <FileName>IWhere.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
