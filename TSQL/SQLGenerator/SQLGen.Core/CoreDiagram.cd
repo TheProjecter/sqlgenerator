@@ -8,14 +8,14 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="SQLGen.Core.ICommon" Collapsed="true">
-    <Position X="1.75" Y="0.5" Width="1.5" />
+    <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAgAAAAgAAEAAAAAAAAAAEAAAQBAAAgAAACAAAA=</HashCode>
       <FileName>ICommon.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SQLGen.Core.ICondition" Collapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Position X="3.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ICAAAAAAAAAAAAAAgIAAAAAAAAAAAAAwAAAACQVBgCA=</HashCode>
       <FileName>ICondition.cs</FileName>
@@ -57,14 +57,14 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="SQLGen.Core.ISelect" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+    <Position X="1.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAEAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>ISelect.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SQLGen.Core.ISQL" Collapsed="true">
-    <Position X="2.75" Y="1.75" Width="1.5" />
+    <Position X="3.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAgABAKAACRACCAEUgAAAAAAgggAAKE=</HashCode>
       <FileName>ISQL.cs</FileName>
@@ -78,7 +78,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="SQLGen.Core.IWhere" Collapsed="true">
-    <Position X="0.5" Y="4.75" Width="1.5" />
+    <Position X="6" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAQAAA=</HashCode>
       <FileName>IWhere.cs</FileName>

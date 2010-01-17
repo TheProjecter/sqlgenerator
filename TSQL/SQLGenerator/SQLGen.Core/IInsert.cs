@@ -12,6 +12,7 @@ namespace SQLGen.Core
         IInsert InsertInto(string tableName, List<string> columns);
         void Values(string values);
         void Values(List<string> values);
+        List<string> Parse();
         ISelect SubQuery
         {
             get;

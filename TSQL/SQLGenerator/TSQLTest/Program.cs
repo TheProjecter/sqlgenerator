@@ -19,18 +19,19 @@ namespace TSQLTest
         {
             SQL s = new SQL();
             s.SelectStatement.Select(Products.ProductID, Products.ProductName, Categories.CategoryName).From(
-                DBTables.Products).InnerJoin(DBTables.Categories).On(Products.CategoryID).Equal(Categories.CategoryID).And("@SomeVal").Equal("(select 1)");
+                DBTables.Products)
+                .InnerJoin(DBTables.Categories)
+                .On(Products.CategoryID).Equal(Categories.CategoryID)
+                .And("@SomeVal").Equal("(select 1)")
+                .Where(Products.CategoryID).Equal("12");
             Console.WriteLine(s.ToString());
             Console.WriteLine("--------------------------------");
-            TSql100Parser parser = new TSql100Parser(false);
-            IScriptFragment fragment;
-            IList<ParseError> errors;
-            fragment = parser.Parse(new StringReader(s.ToString()), out errors);
+            List<string> errors = s.Parse();
             if (errors != null && errors.Count > 0)
             {
                 foreach (var error in errors)
                 {
-                    Console.WriteLine("*{0}",error.Message);
+                    Console.WriteLine("*{0}",error);
                 }
             }
             else

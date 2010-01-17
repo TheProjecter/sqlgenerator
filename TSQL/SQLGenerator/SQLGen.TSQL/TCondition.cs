@@ -9,13 +9,16 @@ namespace SQLGen.TSQL
     public class TCondition : ICondition
     {
         StringBuilder sql;
+        IWhere twhere;
         public TCondition()
         {
             this.sql = new StringBuilder();
+            twhere = new TWhere(sql);
         }
         public TCondition(StringBuilder sb)
         {
             this.sql = sb;
+            twhere = new TWhere(sb);
         }
 
         public override string ToString()
@@ -259,6 +262,19 @@ namespace SQLGen.TSQL
                 throw new Exception(string.Format("Expression cannot be null or empty \r\n'{0}'", this.sql.ToString()));
             }
             return this;
+        }
+
+
+        public IWhere Where()
+        {
+            this.sql.AppendFormat(" \r\nWHERE");
+            return this.twhere;
+        }
+
+        public IWhere Where(string expression)
+        {
+            this.sql.AppendFormat(" \r\nWHERE {0}",expression);
+            return this.twhere;
         }
 
         #endregion

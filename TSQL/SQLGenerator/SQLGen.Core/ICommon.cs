@@ -16,7 +16,7 @@ namespace SQLGen.Core
         void AppendSqlFromXmlHeader(params string[] objs);
         void AppendSqlFromXmlFooter(params string[] objs);
         void Append(string statement);
-
+        List<string> Parse();
         void SaveTo(string filePath);
 
         void Close();

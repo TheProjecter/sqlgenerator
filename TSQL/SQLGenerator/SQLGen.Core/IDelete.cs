@@ -8,5 +8,6 @@ namespace SQLGen.Core
     public interface IDelete
     {
         IFrom DeleteFrom(string tableName);
+        List<string> Parse();
     }
 }

@@ -14,5 +14,6 @@ namespace SQLGen.Core
         IUpdate And(string expression, string value);
         IWhere Where();
         IWhere Where(string condition);
+        List<string> Parse();
     }
 }

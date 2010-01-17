@@ -18,6 +18,6 @@ namespace SQLGen.Core
         IFrom SelectDistinct(params string[] columns);
         IFrom SelectDistinct(int top, params string[] columns);
         IWhere Where();
-        IWhere Where(string condition);   
+        IWhere Where(string condition);      
     }
 }

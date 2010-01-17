@@ -323,6 +323,13 @@ namespace SQLGen.TSQL
             return this;
         }
 
+
+        public IWhere Where()
+        {
+            this.sql.AppendFormat(" \r\nWHERE");
+            return this;
+        }
+
         #endregion
     }
 }

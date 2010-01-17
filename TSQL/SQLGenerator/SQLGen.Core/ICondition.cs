@@ -24,6 +24,8 @@ namespace SQLGen.Core
         ICondition Between(string firstValue, string secondValue);
         ICondition Exists(string subquery);
         ICondition NotExists(string subquery);
+        IWhere Where();
+        IWhere Where(string expression);
         
     }
 }
