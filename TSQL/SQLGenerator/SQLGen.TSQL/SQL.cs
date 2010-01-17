@@ -158,12 +158,6 @@ namespace SQLGen.TSQL
             return this;
         }          
         
-
-        #endregion
-
-        #region ISQL Members
-
-
         public IUpdate UpdateStatement
         {
             get { return this.tupdate; }
@@ -237,7 +231,6 @@ namespace SQLGen.TSQL
             this.sql.Append(" \r\nEND");
         }        
 
-        #endregion
         public List<string> Parse()
         {
             TSql100Parser parser = new TSql100Parser(false);
@@ -254,6 +247,80 @@ namespace SQLGen.TSQL
                 return errorList;
             }
             return null;
+        }
+
+
+
+        public ISQL Intersect(string statement)
+        {
+            this.sql.AppendFormat(" \r\nINTERSECT \r\n{0}",statement);
+            return this;
+        }
+
+        public ISQL Intersect(ISQL statement)
+        {
+            this.sql.AppendFormat(" \r\nINTERSECT \r\n{0}",statement.ToString());
+            return this;
+        }
+
+        public ISQL Intersect(ISelect statement)
+        {
+            this.sql.AppendFormat(" \r\nINTERSECT \r\n{0}",statement.ToString());
+            return this;
+        }
+
+        public ISQL Except(string statement)
+        {
+            this.sql.AppendFormat(" \r\nEXCEPT \r\n{0}",statement);
+            return this;
+        }
+
+        public ISQL Except(ISQL statement)
+        {
+            this.sql.AppendFormat(" \r\nEXCEPT \r\n{0}", statement.ToString());
+            return this;
+        }
+
+        public ISQL Except(ISelect statement)
+        {
+            this.sql.AppendFormat(" \r\nEXCEPT \r\n{0}", statement.ToString());
+            return this;
+        }
+
+        public ISQL Union(string statement)
+        {
+            this.sql.AppendFormat(" \r\nUNION \r\n{0}", statement);
+            return this;
+        }
+
+        public ISQL Union(ISQL statement)
+        {
+            this.sql.AppendFormat(" \r\nUNION \r\n{0}", statement.ToString());
+            return this;
+        }
+
+        public ISQL Union(ISelect statement)
+        {
+            this.sql.AppendFormat(" \r\nUNION \r\n{0}", statement.ToString());
+            return this;
+        }
+
+        public ISQL UnionAll(string statement)
+        {
+            this.sql.AppendFormat(" \r\nUNION ALL \r\n{0}", statement);
+            return this;
+        }
+
+        public ISQL UnionAll(ISQL statement)
+        {
+            this.sql.AppendFormat(" \r\nUNION ALL \r\n{0}", statement.ToString());
+            return this;
+        }
+
+        public ISQL UnionAll(ISelect statement)
+        {
+            this.sql.AppendFormat(" \r\nUNION ALL \r\n{0}", statement.ToString());
+            return this;
         }
 
         #region ICommon Members
@@ -333,9 +400,8 @@ namespace SQLGen.TSQL
             }
         }
 
+        #endregion        
+
         #endregion
-
-
-        
     }
 }

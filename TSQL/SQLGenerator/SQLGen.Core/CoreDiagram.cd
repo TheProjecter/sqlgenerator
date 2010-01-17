@@ -10,21 +10,21 @@
   <Interface Name="SQLGen.Core.ICommon" Collapsed="true">
     <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAgAAEAAAAAAAAAAEAAAQBAAAgAAACAAAA=</HashCode>
+      <HashCode>AAAgAAgAAAAgAAEAAAAAAAAAAEAAAQBAAAgAAACAAAA=</HashCode>
       <FileName>ICommon.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SQLGen.Core.ICondition" Collapsed="true">
-    <Position X="3.5" Y="2.75" Width="1.5" />
+    <Position X="7" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ICAAAAAAAAAAAAAAgIAAAAAAAAAAAAAwAAAACQVBgCA=</HashCode>
+      <HashCode>ICAAAAAAAAAAAAAAgIAAAAAAAAEAAAAwAAAACQVBgCA=</HashCode>
       <FileName>ICondition.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SQLGen.Core.IDelete" Collapsed="true">
     <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAgAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IDelete.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -52,33 +52,33 @@
   <Interface Name="SQLGen.Core.IInsert" Collapsed="true">
     <Position X="8.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgQAAAAAA=</HashCode>
+      <HashCode>AAAgAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgQAAAAAA=</HashCode>
       <FileName>IInsert.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SQLGen.Core.ISelect" Collapsed="true">
-    <Position X="1.25" Y="1.75" Width="1.5" />
+    <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAEAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>ISelect.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="SQLGen.Core.ISQL" Collapsed="true">
-    <Position X="3.5" Y="1.75" Width="1.5" />
+  <Interface Name="SQLGen.Core.ISQL">
+    <Position X="2.25" Y="2" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAgABAKAACRACCAEUgAAAAAAgggAAKE=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAgABAKEACRACCBEUgAAAAAAgwkAAKE=</HashCode>
       <FileName>ISQL.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SQLGen.Core.IUpdate" Collapsed="true">
     <Position X="5.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAQAAAAAAAAABAAAAAAAAAAAAAEAAAAAAAAAAAAABAA=</HashCode>
+      <HashCode>IAQgAAAAAAAABAAAAAAAAAAAAAEAAAAAAAAAAAAABAA=</HashCode>
       <FileName>IUpdate.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SQLGen.Core.IWhere" Collapsed="true">
-    <Position X="6" Y="4" Width="1.5" />
+    <Position X="7" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAQAAA=</HashCode>
       <FileName>IWhere.cs</FileName>

@@ -45,14 +45,29 @@ namespace SQLGen.Core
         string CreateTable(string tableName, params string[] columns);        
         string ExecuteSP(string spName, params string[] paramValues);
         ISQL CreateSP(string spName, params string[] paramaters);
-        ISQL Parentheses<T>(T sql);        
+        ISQL Parentheses<T>(T sql);
         void Begin();
         ISQL Begin(ISQL sqlBlock);
         void End();
         ISQL As();
         
         ICondition AppendIf(string condition);
-        ICondition AppendWhile(string condition);       
+        ICondition AppendWhile(string condition);
+        
+        ISQL Intersect(string statement);
+        ISQL Intersect(ISQL statement);
+        ISQL Intersect(ISelect statement);
 
+        ISQL Except(string statement);
+        ISQL Except(ISQL statement);
+        ISQL Except(ISelect statement);
+
+        ISQL Union(string statement);
+        ISQL Union(ISQL statement);
+        ISQL Union(ISelect statement);
+        
+        ISQL UnionAll(string statement);
+        ISQL UnionAll(ISQL statement);
+        ISQL UnionAll(ISelect statement);
     }
 }

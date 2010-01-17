@@ -24,6 +24,7 @@ namespace TSQLTest
                 .On(Products.CategoryID).Equal(Categories.CategoryID)
                 .And("@SomeVal").Equal("(select 1)")
                 .Where(Products.CategoryID).Equal("12");
+            s.Intersect(new TSelect().Select("*").From("SomeTable").ToString());
             Console.WriteLine(s.ToString());
             Console.WriteLine("--------------------------------");
             List<string> errors = s.Parse();
