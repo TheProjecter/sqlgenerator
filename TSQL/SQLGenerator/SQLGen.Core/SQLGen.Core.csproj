@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICTE.cs" />
     <Compile Include="IAggregate.cs" />
     <Compile Include="ICommon.cs" />
     <Compile Include="ICondition.cs" />

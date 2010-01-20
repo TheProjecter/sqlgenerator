@@ -22,7 +22,7 @@ namespace TSQLTest
                 .From(DBTables.Products)
                 .InnerJoin(DBTables.Categories)
                 .On(Categories.CategoryID).Equal(Products.CategoryID)
-                .Where(Products.Discontinued).Equal("'true'");
+                .Where(Products.Discontinued).Equal("'true'");            
             TSelect sel = new TSelect();
             sel.Select(Products.ProductID, Products.ProductName)
                 .From(DBTables.Products)

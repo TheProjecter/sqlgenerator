@@ -78,5 +78,7 @@ namespace SQLGen.Core
 
         ISQL Having(string condition);
         ISQL Having(ICondition condition);
+
+        ICTE With(string cteName);
     }
 }
