@@ -323,6 +323,46 @@ namespace SQLGen.TSQL
             return this;
         }
 
+        
+
+        public ISQL GroupBy(string columns)
+        {
+            this.sql.AppendFormat(" \r\nGROUP BY {0}",columns);
+            return this;
+        }
+
+        public ISQL GroupBy(params string[] columns)
+        {
+            this.sql.AppendFormat(" \r\nGROUP BY {0}",Utility.GetListAsString<string>(columns.ToList(),","));
+            return this;
+        }
+
+        public ISQL OrderBy(string columns)
+        {
+            this.sql.AppendFormat(" \r\nORDER BY {0}",columns);
+            return this;
+        }
+
+        public ISQL OrderBy(params string[] columns)
+        {
+            this.sql.AppendFormat(" \r\nORDER BY {0}", Utility.GetListAsString<string>(columns.ToList(), ","));
+            return this;
+        }
+
+        public ISQL Having(string condition)
+        {
+            this.sql.AppendFormat(" \r\nHAVING {0}", condition);
+            return this;
+        }
+
+        public ISQL Having(ICondition condition)
+        {
+            this.sql.AppendFormat(" \r\nHAVING {0}", condition.ToString());
+            return this;
+        }
+
+        #endregion
+
         #region ICommon Members
 
         public void LoadXml(string xml)
@@ -401,7 +441,5 @@ namespace SQLGen.TSQL
         }
 
         #endregion        
-
-        #endregion
     }
 }

@@ -18,13 +18,17 @@ namespace TSQLTest
         static void Main(string[] args)
         {
             SQL s = new SQL();
-            s.SelectStatement.Select(Products.ProductID, Products.ProductName, Categories.CategoryName).From(
-                DBTables.Products)
+            s.SelectStatement.Select(Products.ProductID, Products.ProductName)
+                .From(DBTables.Products)
                 .InnerJoin(DBTables.Categories)
-                .On(Products.CategoryID).Equal(Categories.CategoryID)
-                .And("@SomeVal").Equal("(select 1)")
-                .Where(Products.CategoryID).Equal("12");
-            s.Intersect(new TSelect().Select("*").From("SomeTable").ToString());
+                .On(Categories.CategoryID).Equal(Products.CategoryID)
+                .Where(Products.Discontinued).Equal("'true'");
+            TSelect sel = new TSelect();
+            sel.Select(Products.ProductID, Products.ProductName)
+                .From(DBTables.Products)
+                .Where(Products.ProductName).Like("p%");
+            s.Intersect(sel);
+            
             Console.WriteLine(s.ToString());
             Console.WriteLine("--------------------------------");
             List<string> errors = s.Parse();

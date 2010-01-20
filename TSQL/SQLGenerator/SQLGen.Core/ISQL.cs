@@ -69,5 +69,14 @@ namespace SQLGen.Core
         ISQL UnionAll(string statement);
         ISQL UnionAll(ISQL statement);
         ISQL UnionAll(ISelect statement);
+
+        ISQL GroupBy(string columns);
+        ISQL GroupBy(params string[] columns);
+
+        ISQL OrderBy(string columns);
+        ISQL OrderBy(params string[] columns);
+
+        ISQL Having(string condition);
+        ISQL Having(ICondition condition);
     }
 }
